@@ -1,3 +1,6 @@
+# Lab 2 Computational Intelligence
+
+
 # Memetic Algorithm for the Traveling Salesperson Problem (TSP)
 
 This repository contains a Python implementation of a high-performance **Memetic Algorithm (MA)** designed to solve the **Traveling Salesperson Problem (TSP)**.
@@ -10,7 +13,7 @@ A Memetic Algorithm is a hybrid approach that combines a traditional **Genetic A
 
 ### Hybrid Approach
 - It’s a **Memetic Algorithm**, not a simple GA.  
-- Every child solution generated is immediately optimized using a **local search heuristic**.
+- A child solution generated is immediately optimized using a **local search heuristic** with a probability of 0.1.
 
 ### Asymmetric TSP (ATSP) Support
 - Automatically detects if the problem is **symmetric** (standard TSP) or **asymmetric (ATSP)**.
@@ -48,8 +51,8 @@ The main `easy_algorithm()` function follows this logic:
      - Swap Mutation (2-city exchange)  
      - Insertion Mutation (city relocation)
 
-4. **Local Search (Memetic Step)**
-   Every child is immediately optimized until a local optimum is reached:
+4. **Local Search (Memetic Step) with probaility 0.1**
+   A child is immediately optimized until a local optimum is reached:
    - Symmetric TSP → `local_search_systematic` (2-opt search)
    - Asymmetric TSP → `local_search_systematic_insertion` (insertion search)
 
@@ -85,7 +88,7 @@ Optimized to calculate **cost deltas** rather than full tour recalculation.
 
 ## Local Search (Hill-Climbing)
 
-This is where the "memetic" improvement occurs — every child undergoes a local search:
+This is where the "memetic" improvement occurs — a child undergoes a local search:
 
 - **`_local_search_core` (2-Opt):**  
   Used for symmetric TSPs. Repeatedly applies improving 2-opt moves.
@@ -122,17 +125,5 @@ easy_algorithm()
 During execution:
 - The best cost found at initialization and every new improvement is printed.  
 - The output indicates whether it’s solving a **symmetric** (“Real problem: True”) or **asymmetric** (“Real problem: False”) TSP.
-
----
-
-## Summary
-
-| Feature | Description |
-|----------|-------------|
-| Algorithm Type | Memetic (GA + Local Search) |
-| Acceleration | Numba (`@njit`) |
-| Mutation Cost | Delta-based ($O(1)$) |
-| Initialization | Nearest Neighbour + Random |
-| Restart | Adaptive, up to 5 cycles |
 
 ---
