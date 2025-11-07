@@ -1,5 +1,5 @@
-# Lab 2 Computational Intelligence
-
+# Lab 2 Computational Intelligence Francesco Palmisani s343429
+This Lab shares some ideas with the one of Giosuè Pinto s342711
 
 # Memetic Algorithm for the Traveling Salesperson Problem (TSP)
 
