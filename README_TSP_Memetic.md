@@ -65,7 +65,7 @@ The main `easy_algorithm()` function follows this logic:
    If the best cost doesn’t improve for `MAX_ITERATIONS_WITHOUT_IMPROVEMENT`, the algorithm:
    - Re-initializes the population  
    - Preserves the best-found individual  
-   - Repeats this process up to 5 times
+   - Repeats this process up to 3 times
 
 ---
 
@@ -127,3 +127,30 @@ During execution:
 - The output indicates whether it’s solving a **symmetric** (“Real problem: True”) or **asymmetric** (“Real problem: False”) TSP.
 
 ---
+
+### Test_result
+Results found for up to 6 minutes
+
+| Problem | Value |
+|----------|-------------|
+| g_10 | 1497.664|
+| g_20 | 1755.515|
+| g_50 | 2629.987|
+| g_100 | 3952.512|
+| g_200 | 5421.974|
+| g_500 | 8345.290|
+| g_1000 | 12154.275|
+| r1_10 | 184.273|
+| r1_20 | 337.295|
+| r1_50 | 536.097|
+| r1_100 | 698.662|
+| r1_200 | 941.622|
+| r1_500 | 1489.767|
+| r1_1000 | 2370.329|
+| r2_10 | -411.702|
+| r2_20 | -855.424|
+| r2_50 | -2292.594|
+| r2_100 | -4753.485|
+| r2_200 | -9683.756|
+| r2_500 | -24631.038|
+| r2_1000 | -49527.882|
